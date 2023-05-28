@@ -218,7 +218,7 @@ select * from picks;
 --display all draft picks by the NY Jets (my favorite team)
 select pick_number, picked_by, name, position
 from picks
-where picked_by = "NY Jet";
+where picked_by = "NY Jets";
 
 --display all QB's drafted in the first 3 rounds
 select pick_number, name, position
