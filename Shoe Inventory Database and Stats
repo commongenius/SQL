@@ -5,7 +5,7 @@ create table genius_kicks (id integer primary key, brand text, shoe text, platfo
 insert into genius_kicks values 
 
 (1, "Nike", "Free Run", "Amazon", 100),
-(2, "Jordan", "Jordan Mid", "eBay", 130),
+(2, "Jordan", "Jordan Mid", "eBay", 150),
 (3, "Nike", "Vapor Edge", "Amazon", 120),
 (4, "Jordan", "Jordan 1", "eBay", 250),
 (5, "Nike", "Roshe G", "Amazon", 150),
