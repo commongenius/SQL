@@ -1,0 +1,55 @@
+--Create a shoe inventory database
+
+create table genius_kicks (id integer primary key, brand text, shoe text, platform text, price integer);
+
+insert into genius_kicks values 
+
+(1, "Nike", "Free Run", "Amazon", 100),
+(2, "Jordan", "Jordan Mid", "eBay", 130),
+(3, "Nike", "Vapor Edge", "Amazon", 120),
+(4, "Jordan", "Jordan 1", "eBay", 250),
+(5, "Nike", "Roshe G", "Amazon", 150),
+(6, "Jordan", "Jordan Mid GS", "eBay", 130),
+(7, "Nike", "Infinity React", "Amazon", 150),
+(8, "Jordan", "Vapor Low Cleats", "Amazon", 300),
+(9, "Jordan", "Vapor Mid Cleats", "Amazon", 300),
+(10, "Nike", "GTS 97", "Amazon", 60),
+(11, "Nike", "Killshot 2", "Amazon", 100),
+(12, "Nike", "Air Max 1", "Amazon", 200),
+(13, "Nike", "Air Max 90", "Amazon", 180),
+(14, "Nike", "Air Max 270", "Amazon", 150),
+(15, "Jordan", "Jordan 11", "eBay", 250);
+
+--display the inventory ordered by price
+select * from genius_kicks
+order by price desc;
+
+--display Nike inventory ordered by price
+select * from genius_kicks
+where brand = "Nike"
+order by price desc;
+
+--display Jordan inventory ordered by price
+select * from genius_kicks
+where brand = "Jordan"
+order by price desc;
+
+--display average price for Amazon listings and limit to 2 decimal places
+select ROUND(AVG(price), 2) AS 
+"Average Amazon Listing Price"
+from genius_kicks
+where platform = "Amazon"
+order by price desc;
+
+--display average price for eBay listings
+select avg(price) as "Average eBay Listing Price"
+from genius_kicks
+where platform = "eBay"
+order by price desc;
+
+--display 5 highest priced items in inventory
+select brand, shoe, platform, price 
+from genius_kicks
+order by price desc
+limit 5;
+
